@@ -1,9 +1,9 @@
 import React from 'react';
 import './MenuItem.css';
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, photosOnly = false }) => {
   return (
-    <div className="menu-item">
+    <div className={`menu-item ${photosOnly ? 'photos-only' : ''}`}>
       {item.image && (
         <div className="menu-item-image">
           <img 
@@ -16,13 +16,15 @@ const MenuItem = ({ item }) => {
           />
         </div>
       )}
-      <div className="menu-item-content">
-        <div className="menu-item-header">
-          <h3 className="menu-item-name">{item.name}</h3>
-          <span className="menu-item-price">${parseFloat(item.price).toFixed(2)}</span>
+      {!photosOnly && (
+        <div className="menu-item-content">
+          <div className="menu-item-header">
+            <h3 className="menu-item-name">{item.name}</h3>
+            <span className="menu-item-price">{item.price}</span>
+          </div>
+          <p className="menu-item-description">{item.description}</p>
         </div>
-        <p className="menu-item-description">{item.description}</p>
-      </div>
+      )}
     </div>
   );
 };

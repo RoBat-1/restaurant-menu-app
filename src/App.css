@@ -2,29 +2,36 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to bottom, #c8d633 0%, #b8c629 100%);
 }
 
 .app-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #c8d633 0%, #b8c629 100%);
+  color: #8B4513;
+  padding: 3.5rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid #D2691E;
 }
 
 .restaurant-name {
-  font-size: 3rem;
-  margin: 0 0 0.5rem 0;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 3.5rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Georgia', serif;
+  letter-spacing: 4px;
+  color: #E8B549;
 }
 
 .restaurant-tagline {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin: 0;
-  opacity: 0.95;
+  color: #654321;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-style: italic;
+  font-family: 'Georgia', serif;
 }
 
 .menu-container {
@@ -32,6 +39,8 @@
   margin: 0 auto;
   padding: 4rem 2rem;
   flex-grow: 1;
+  background: #f5f5dc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .loading {
@@ -47,7 +56,7 @@
   width: 60px;
   height: 60px;
   border: 5px solid #f3f4f6;
-  border-top: 5px solid #667eea;
+  border-top: 5px solid #D2691E;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -63,25 +72,137 @@
 }
 
 .app-footer {
-  background: #2d3748;
-  color: white;
+  background: linear-gradient(135deg, #c8d633 0%, #b8c629 100%);
+  color: #8B4513;
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   margin-top: auto;
+  border-top: 4px solid #D2691E;
+  font-family: 'Georgia', serif;
 }
 
 .app-footer p {
-  margin: 0;
-  opacity: 0.9;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: #654321;
 }
 
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-link {
+  background: #25D366;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-link:hover {
+  background: #20BA5A;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.instagram-link {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+}
+
+.instagram-link:hover {
+  background: linear-gradient(45deg, #d8842f 0%, #c95a34 25%, #b8233a 50%, #a91e5a 75%, #9a1577 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(225, 48, 108, 0.4);
+}
+
+.facebook-link {
+  background: #1877F2;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+}
+
+.facebook-link:hover {
+  background: #145dbf;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.4);
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  .restaurant-name {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+  
+  .menu-container {
+    max-width: 100%;
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Mobile landscape and below */
 @media (max-width: 768px) {
   .restaurant-name {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
   }
   
   .restaurant-tagline {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .app-header {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .menu-container {
+    padding: 2.5rem 1.25rem;
+  }
+  
+  .app-footer {
+    padding: 2rem 1.5rem;
+  }
+  
+  .social-link {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .restaurant-name {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .restaurant-tagline {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
   }
   
   .app-header {
@@ -90,6 +211,36 @@
   
   .menu-container {
     padding: 2rem 1rem;
+  }
+  
+  .app-footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .app-footer p {
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .social-link {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .social-icon {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .social-links {
+    gap: 0.75rem;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1440px) {
+  .menu-container {
+    max-width: 1600px;
   }
 }
 

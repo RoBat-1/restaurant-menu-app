@@ -7,13 +7,35 @@ export const parseCSV = (csvText) => {
   const lines = csvText.split('\n').filter(line => line.trim() !== '');
   if (lines.length === 0) return [];
 
+  // Helper function to split CSV line respecting quotes
+  const splitCSVLine = (line) => {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current.trim());
+    return result;
+  };
+
   // Get headers from first line
-  const headers = lines[0].split(',').map(header => header.trim());
+  const headers = splitCSVLine(lines[0]);
 
   // Parse data rows
   const data = [];
   for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(',');
+    const values = splitCSVLine(lines[i]);
     if (values.length === headers.length) {
       const row = {};
       headers.forEach((header, index) => {
