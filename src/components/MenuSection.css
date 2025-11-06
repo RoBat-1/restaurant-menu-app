@@ -139,21 +139,58 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.full-width-container {
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.full-width-image:hover {
+.full-width-container:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
-.full-width-image img {
+.full-width-container img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.full-width-order-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  font-family: 'Georgia', serif;
+  z-index: 10;
+}
+
+.full-width-order-button:hover {
+  background: #20BA5A;
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-icon-button {
+  width: 24px;
+  height: 24px;
 }
 
 @media (max-width: 768px) {
@@ -178,6 +215,7 @@
 }
 
 .image-grid-item {
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -197,6 +235,39 @@
   display: block;
 }
 
+.image-order-button {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.25rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  font-family: 'Georgia', serif;
+  z-index: 10;
+}
+
+.image-order-button:hover {
+  background: #20BA5A;
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.image-order-button .whatsapp-icon-small {
+  width: 18px;
+  height: 18px;
+}
+
 @media (max-width: 1024px) {
   .image-grid-only {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -209,6 +280,20 @@
 }
 
 @media (max-width: 768px) {
+  .full-width-container {
+    border-radius: 8px;
+  }
+  
+  .full-width-order-button {
+    font-size: 1rem;
+    padding: 0.85rem 1.75rem;
+  }
+  
+  .whatsapp-icon-button {
+    width: 22px;
+    height: 22px;
+  }
+  
   .image-grid-only {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.25rem;
@@ -220,6 +305,11 @@
   
   .image-grid-item img {
     height: 220px;
+  }
+  
+  .image-order-button {
+    font-size: 0.85rem;
+    padding: 0.65rem 1rem;
   }
 }
 
@@ -235,6 +325,21 @@
 }
 
 @media (max-width: 480px) {
+  .full-width-container {
+    border-radius: 6px;
+  }
+  
+  .full-width-order-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    bottom: 15px;
+  }
+  
+  .whatsapp-icon-button {
+    width: 20px;
+    height: 20px;
+  }
+  
   .image-grid-only {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
@@ -246,5 +351,16 @@
   
   .image-grid-item img {
     height: 160px;
+  }
+  
+  .image-order-button {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.85rem;
+    bottom: 10px;
+  }
+  
+  .image-order-button .whatsapp-icon-small {
+    width: 16px;
+    height: 16px;
   }
 }
