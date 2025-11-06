@@ -129,6 +129,40 @@
   height: 20px;
 }
 
+/* Order button overlay for photos-only mode */
+.menu-item-image .image-order-button {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.25rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  font-family: 'Georgia', serif;
+  z-index: 10;
+}
+
+.menu-item-image .image-order-button:hover {
+  background: #20BA5A;
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.menu-item-image .image-order-button .whatsapp-icon-small {
+  width: 18px;
+  height: 18px;
+}
+
 /* Tablet and mobile responsiveness */
 @media (max-width: 1024px) {
   .menu-item-image {
