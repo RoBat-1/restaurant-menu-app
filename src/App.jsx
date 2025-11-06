@@ -5,6 +5,7 @@ import './App.css';
 
 function App() {
   const [kaakItems, setKaakItems] = useState([]);
+  const [waffleItems, setWaffleItems] = useState([]);
   const [crepeItems, setCrepeItems] = useState([]);
   const [juiceItems, setJuiceItems] = useState([]);
   const [birthdayItems, setBirthdayItems] = useState([]);
@@ -14,14 +15,16 @@ function App() {
     const loadMenuData = async () => {
       setLoading(true);
       try {
-        const [kaak, crepes, juice, birthdays] = await Promise.all([
+        const [kaak, waffles, crepes, juice, birthdays] = await Promise.all([
           fetchCSV('/data/kaak.csv'),
+          fetchCSV('/data/waffle.csv'),
           fetchCSV('/data/crepes.csv'),
           fetchCSV('/data/juice.csv'),
           fetchCSV('/data/birthdays.csv')
         ]);
 
         setKaakItems(kaak);
+        setWaffleItems(waffles);
         setCrepeItems(crepes);
         setJuiceItems(juice);
         setBirthdayItems(birthdays);
@@ -58,6 +61,12 @@ function App() {
           icon="🥖"
           photosOnly={true}
           fullWidth={true}
+        />
+        
+        <MenuSection 
+          title="Waffle" 
+          items={waffleItems} 
+          icon="🧇"
         />
         
         <MenuSection 
