@@ -98,6 +98,7 @@ function App() {
           title="Fresh Juices" 
           items={juiceItems} 
           icon="🧃"
+          orderText="order"
         />
         
         <MenuSection 

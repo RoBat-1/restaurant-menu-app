@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from './MenuItem';
 import './MenuSection.css';
 
-const MenuSection = ({ title, items, icon, photosOnly = false, fullWidth = false, imageGridOnly = false }) => {
+const MenuSection = ({ title, items, icon, photosOnly = false, fullWidth = false, imageGridOnly = false, orderText }) => {
   // Separate items into text-only (no image) and items with images
   const textOnlyItems = items.filter(item => !item.image);
   const imageItems = items.filter(item => item.image);
@@ -18,7 +18,7 @@ const MenuSection = ({ title, items, icon, photosOnly = false, fullWidth = false
       {photosOnly && textOnlyItems.length > 0 && !imageGridOnly && (
         <div className="text-items">
           {textOnlyItems.map((item, index) => (
-            <MenuItem key={`text-${index}`} item={item} photosOnly={false} />
+            <MenuItem key={`text-${index}`} item={item} photosOnly={false} orderText={orderText} />
           ))}
         </div>
       )}
@@ -79,7 +79,7 @@ const MenuSection = ({ title, items, icon, photosOnly = false, fullWidth = false
       ) : (
         <div className="menu-grid">
           {(photosOnly ? imageItems : items).map((item, index) => (
-            <MenuItem key={index} item={item} photosOnly={photosOnly} />
+            <MenuItem key={index} item={item} photosOnly={photosOnly} orderText={orderText} />
           ))}
         </div>
       )}
