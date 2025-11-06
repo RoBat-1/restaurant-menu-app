@@ -8,6 +8,7 @@ function App() {
   const [waffleItems, setWaffleItems] = useState([]);
   const [specialWaffleItems, setSpecialWaffleItems] = useState([]);
   const [crepeItems, setCrepeItems] = useState([]);
+  const [specialCrepeItems, setSpecialCrepeItems] = useState([]);
   const [juiceItems, setJuiceItems] = useState([]);
   const [birthdayItems, setBirthdayItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,11 +17,12 @@ function App() {
     const loadMenuData = async () => {
       setLoading(true);
       try {
-        const [kaak, waffles, specialWaffles, crepes, juice, birthdays] = await Promise.all([
+        const [kaak, waffles, specialWaffles, crepes, specialCrepes, juice, birthdays] = await Promise.all([
           fetchCSV('/data/kaak.csv'),
           fetchCSV('/data/waffle.csv'),
           fetchCSV('/data/special-waffle.csv'),
           fetchCSV('/data/crepes.csv'),
+          fetchCSV('/data/special-crepe.csv'),
           fetchCSV('/data/juice.csv'),
           fetchCSV('/data/birthdays.csv')
         ]);
@@ -29,6 +31,7 @@ function App() {
         setWaffleItems(waffles);
         setSpecialWaffleItems(specialWaffles);
         setCrepeItems(crepes);
+        setSpecialCrepeItems(specialCrepes);
         setJuiceItems(juice);
         setBirthdayItems(birthdays);
       } catch (error) {
@@ -83,6 +86,12 @@ function App() {
           items={crepeItems} 
           icon="🥞"
           photosOnly={true}
+        />
+        
+        <MenuSection 
+          title="Special Edition Crêpe" 
+          items={specialCrepeItems} 
+          icon="⭐"
         />
         
         <MenuSection 
