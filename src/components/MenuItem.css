@@ -90,8 +90,43 @@
   color: #8B4513;
   font-size: 0.9rem;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-style: italic;
+}
+
+.order-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+  font-family: 'Georgia', serif;
+  margin-top: auto;
+}
+
+.order-button:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.order-button:active {
+  transform: translateY(0);
+}
+
+.whatsapp-icon-small {
+  width: 20px;
+  height: 20px;
 }
 
 /* Tablet and mobile responsiveness */
@@ -128,10 +163,21 @@
   
   .menu-item-description {
     font-size: 0.85rem;
+    margin: 0 0 0.75rem 0;
   }
   
   .menu-item-content {
     padding: 1.25rem;
+  }
+  
+  .order-button {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.85rem;
+  }
+  
+  .whatsapp-icon-small {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -184,6 +230,17 @@
   .menu-item-description {
     font-size: 0.85rem;
     line-height: 1.5;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .order-button {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
+  
+  .whatsapp-icon-small {
+    width: 16px;
+    height: 16px;
   }
 }
 
