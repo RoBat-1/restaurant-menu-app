@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   const [kaakItems, setKaakItems] = useState([]);
   const [waffleItems, setWaffleItems] = useState([]);
+  const [specialWaffleItems, setSpecialWaffleItems] = useState([]);
   const [crepeItems, setCrepeItems] = useState([]);
   const [juiceItems, setJuiceItems] = useState([]);
   const [birthdayItems, setBirthdayItems] = useState([]);
@@ -15,9 +16,10 @@ function App() {
     const loadMenuData = async () => {
       setLoading(true);
       try {
-        const [kaak, waffles, crepes, juice, birthdays] = await Promise.all([
+        const [kaak, waffles, specialWaffles, crepes, juice, birthdays] = await Promise.all([
           fetchCSV('/data/kaak.csv'),
           fetchCSV('/data/waffle.csv'),
+          fetchCSV('/data/special-waffle.csv'),
           fetchCSV('/data/crepes.csv'),
           fetchCSV('/data/juice.csv'),
           fetchCSV('/data/birthdays.csv')
@@ -25,6 +27,7 @@ function App() {
 
         setKaakItems(kaak);
         setWaffleItems(waffles);
+        setSpecialWaffleItems(specialWaffles);
         setCrepeItems(crepes);
         setJuiceItems(juice);
         setBirthdayItems(birthdays);
@@ -67,6 +70,12 @@ function App() {
           title="Waffle" 
           items={waffleItems} 
           icon="🧇"
+        />
+        
+        <MenuSection 
+          title="Special Edition Waffle" 
+          items={specialWaffleItems} 
+          icon="⭐"
         />
         
         <MenuSection 
