@@ -89,7 +89,7 @@ function App() {
         />
         
         <MenuSection 
-          title="Special Edition Crêpe" 
+          title="Special Crêpes" 
           items={specialCrepeItems} 
           icon="⭐"
         />
