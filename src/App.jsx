@@ -120,7 +120,7 @@ function App() {
         />
         
         <MenuSection 
-          title="Birthdays" 
+          title="Birthday Crepes" 
           items={birthdayItems} 
           icon="🎂"
           imageGridOnly={true}
